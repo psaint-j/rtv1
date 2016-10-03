@@ -6,19 +6,20 @@
 #    By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/04 17:43:28 by psaint-j          #+#    #+#              #
-#    Updated: 2016/09/30 16:14:09 by psaint-j         ###   ########.fr        #
+#    Updated: 2016/10/03 18:27:24 by psaint-j         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = rtv1
-SRC =	./src/main.c\
+SRC =	./src/sceneConstruct.c\
 		./src/vectorFonction.c\
 		./src/cameraFonction.c\
 		./src/lightFonction.c\
 		./src/colorFonction.c\
 		./src/sphereFonction.c\
 		./src/planeFonction.c\
-		./src/rayFonction.c		
+		./src/rayFonction.c\
+		./src/mlxFonction.c		
 OBJ = $(SRC:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

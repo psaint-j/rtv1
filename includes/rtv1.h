@@ -6,7 +6,7 @@
 /*   By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/24 17:57:01 by psaint-j          #+#    #+#             */
-/*   Updated: 2016/09/30 16:15:45 by psaint-j         ###   ########.fr       */
+/*   Updated: 2016/10/03 18:16:28 by psaint-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,7 @@
 # include "./light.h"
 # include "./sphere.h"
 # include "./plane.h"
-/* Sphere */
-/*typedef struct	s_sphere
-{
-	t_vector	pos;
-	float		radius;
-	int			Material;
-}				t_sphere;
-*/
-
-/* Material */
-typedef struct	s_material
-{
-	t_color		diffuse;
-	float		reflection;
-}				t_material;
+# include "./material.h"
 
 /*Delta second degre*/
 typedef struct	s_delta{
@@ -65,8 +51,6 @@ typedef struct	s_img
 	int		yHeight;
 }				t_img;
 
-//SphereFonction.c
-bool			intersectSphere(t_ray *r, t_sphere *s, float *t);
 //createImage.c
 void			saveppm(char *filename, unsigned char *img, int width, int height);
 //mlxFonction.c

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sphere.h                                           :+:      :+:    :+:   */
+/*   material.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/28 16:02:30 by psaint-j          #+#    #+#             */
-/*   Updated: 2016/10/03 18:12:24 by psaint-j         ###   ########.fr       */
+/*   Created: 2016/10/03 16:48:49 by psaint-j          #+#    #+#             */
+/*   Updated: 2016/10/03 16:54:12 by psaint-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPHERE_H
-# define SPHERE_H
-# include "../includes/rtv1.h"
+#ifndef MATERIAL_H
+# define MATERIAL_H
+#include "./rtv1.h"
 
-typedef struct	s_sphere
+typedef	struct	s_material
 {
-	t_vector	pos;
-	float		radius;
-	int 		material;
-}				t_sphere;
+	t_color	diffuse;
+	float		reflection;
+}				t_material;
 
-//sphereFonction.c
-t_sphere	sphereConstruct(t_vector pos, float radius, int material);
-bool		sphereIntersect(t_ray *r, t_sphere *s, float *t);
-void		sphereDebug(t_sphere debug);
+t_material		materialConstruct(t_color diffuse, float reflection);
+void			materialDebug(t_material debug);
 #endif
