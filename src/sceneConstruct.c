@@ -6,7 +6,7 @@
 /*   By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/03 16:11:26 by psaint-j          #+#    #+#             */
-/*   Updated: 2016/10/03 18:24:31 by psaint-j         ###   ########.fr       */
+/*   Updated: 2016/10/04 11:29:06 by psaint-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,22 +161,22 @@ int		main(void)
 					green += lambert * currentLight.intensity.green * currentMat.diffuse.green;
 					blue += lambert * currentLight.intensity.blue * currentMat.diffuse.blue;
 				}
-				/* Iterate over the reflection */
-				/*coef *= currentMat.reflection;
+				 /* Iterate over the reflection */
+				coef *= currentMat.reflection;
 				
 				// The reflected ray start and direction
 				r.start = newStart;
 				float reflect = 2.0f * vectorDot(&r.dir, &n);
-				vector tmp = vectorScale(reflect, &n);
+				t_vector tmp = vectorScale(reflect, &n);
 				r.dir = vectorSub(&r.dir, &tmp);
 
-				level++;*/
+				level++;
 
 			}while((coef > 0.0f) && (level < 15));
 			mlx_pixel_to_image(&img, x, y, createRGB((unsigned char)min(red*255.0f, 255.0f), (unsigned char)min(green*255.0f, 255.0f), (unsigned char)min(blue*255.0f, 255.0f)));
-			image[(x + y*WIDTH)*3 + 0] = (unsigned char)min(red*255.0f, 255.0f);
-			image[(x + y*WIDTH)*3 + 1] = (unsigned char)min(green*255.0f, 255.0f);
-			image[(x + y*WIDTH)*3 + 2] = (unsigned char)min(blue*255.0f, 255.0f);
+			image[(x + y * WIDTH) * 3 + 0] = (unsigned char)min(red*255.0f, 255.0f);
+			image[(x + y * WIDTH) * 3 + 1] = (unsigned char)min(green*255.0f, 255.0f);
+			image[(x + y * WIDTH) * 3 + 2] = (unsigned char)min(blue*255.0f, 255.0f);
 		}
 	}
 	
