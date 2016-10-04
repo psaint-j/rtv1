@@ -6,7 +6,7 @@
 /*   By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/24 17:57:01 by psaint-j          #+#    #+#             */
-/*   Updated: 2016/10/03 18:16:28 by psaint-j         ###   ########.fr       */
+/*   Updated: 2016/10/04 11:43:51 by psaint-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,12 @@ typedef struct	s_img
 	int		yHeight;
 }				t_img;
 
-//createImage.c
-void			saveppm(char *filename, unsigned char *img, int width, int height);
-//mlxFonction.c
+/* saveimgFonction.c */
+
+void			savePPM(char *filename, unsigned char *img, int width, int height);
+
+/* mlxFonction.c */
+
 t_img			initImage(t_img s);
 void			mlx_pixel_to_image(t_img *s, int x, int y, int color);
 unsigned long	createRGB(int r, int g, int b);

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   plane.h                                            :+:      :+:    :+:   */
+/*   saveimgFonction.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/28 18:16:07 by psaint-j          #+#    #+#             */
-/*   Updated: 2016/10/04 14:19:37 by psaint-j         ###   ########.fr       */
+/*   Created: 2016/10/04 11:39:45 by psaint-j          #+#    #+#             */
+/*   Updated: 2016/10/04 11:43:54 by psaint-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLANE_H
-# define PLANE_H
-# include "./rtv1.h"
+#include "../includes/rtv1.h"
 
-typedef struct	s_plane
+void	savePPM(char *filename, unsigned char *img, int width, int height)
 {
-	t_vector	normal;
-	double		distance;
-	t_color		color;
-}				t_plane;
+	FILE	*f;
 
-t_plane			planeConstruct(t_vector normal, double distance, t_color color);
-double			planeIntersection(t_ray ray, t_plane plane);
-void			planeDebug(t_plane debug);
-#endif
+	f = fopen(filename, "w");
+	fprintf(f, "P6 %d %d %d\n", width, height, 255);
+	fwrite(img, 3, width*height, f);
+	fclose(f);
+}

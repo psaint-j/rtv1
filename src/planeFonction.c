@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   planeFonction.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaint-j <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 18:23:12 by psaint-j          #+#    #+#             */
-/*   Updated: 2016/09/29 19:43:15 by psaint-j         ###   ########.fr       */
+/*   Updated: 2016/10/04 14:19:18 by psaint-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/rtv1.h"
@@ -24,12 +24,9 @@ t_vector	planeNormalAt(t_plane plane)
 {
 	return (plane.normal);
 }
-#define C vectorNegative(vectorScale(plane.normal, plane.distance))
-#define B vectorAdd(ray.start, C)
-#define A vectorDot(plane.normal, B)
 
 double		planeIntersection(t_ray ray, t_plane plane)
-{
+{		
 	double		b;
 	double		a;
 	t_vector	tmp;

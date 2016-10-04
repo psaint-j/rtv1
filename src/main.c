@@ -6,7 +6,7 @@
 /*   By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/06 18:10:36 by psaint-j          #+#    #+#             */
-/*   Updated: 2016/09/30 20:18:38 by psaint-j         ###   ########.fr       */
+/*   Updated: 2016/10/04 14:21:32 by psaint-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		main(void)
 	t_vector	diff_btw;
 	t_vector	camdir;
 	t_vector	camright;
-	t_vector	tmp;
+	t_vector	tmp;	
 	t_vector	camdown;
 	t_camera	scene_cam;
 	t_light		scene_light;
@@ -97,7 +97,6 @@ int		main(void)
 		x = 0;
 		y++;
 	}
-//	saveppm("rtv1.ppm",im, WIDTH, HEIGHT);
 //	mlx_put_image_to_window(img.mlx, img.win, img.img_ptr, 0, 0);
 //	ft_putstr("finishing rendering\n");
 //	mlx_loop(img.mlx);*/
