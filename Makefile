@@ -6,7 +6,7 @@
 #    By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/04 17:43:28 by psaint-j          #+#    #+#              #
-#    Updated: 2016/10/04 11:42:05 by psaint-j         ###   ########.fr        #
+#    Updated: 2016/10/05 18:59:25 by psaint-j         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC =	./src/sceneConstruct.c\
 		./src/planeFonction.c\
 		./src/rayFonction.c\
 		./src/mlxFonction.c\
-		./src/saveimgFonction.c		
+		./src/saveimgFonction.c\
+		./src/materialFonction.c
 OBJ = $(SRC:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

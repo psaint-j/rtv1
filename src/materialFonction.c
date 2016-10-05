@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   plane.h                                            :+:      :+:    :+:   */
+/*   materialFonction.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaint-j <psaint-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/28 18:16:07 by psaint-j          #+#    #+#             */
-/*   Updated: 2016/10/05 18:58:38 by psaint-j         ###   ########.fr       */
+/*   Created: 2016/10/05 16:17:01 by psaint-j          #+#    #+#             */
+/*   Updated: 2016/10/05 17:20:18 by psaint-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLANE_H
-# define PLANE_H
-# include "./rtv1.h"
+#include "../includes/rtv1.h"
 
-typedef struct	s_plane
+t_material		materialConstruct(t_color diffuse, float reflection)
 {
-	t_vector	normal;
-	double		distance;
-	t_color		color;
-}				t_plane;
+	t_material	result;
+	result.diffuse = diffuse;
+	result.reflection = reflection;
+	return (result);
+}
 
-t_plane			planeConstruct(t_vector normal, double distance, t_color color);
-double			planeIntersection(t_ray ray, t_plane plane);
-void			planeDebug(t_plane debug);
-#endif
+void			materialDebug(t_material debug)
+{
+	printf("materialDiffuse(%f, %f, %f)\n",debug.diffuse.red, debug.diffuse.green, debug.diffuse.blue);
+	printf("materialReflection(%f)\n",debug.reflection);
+}
